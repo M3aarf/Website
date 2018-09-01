@@ -1,0 +1,138 @@
+.course-details
+{
+    margin-top:25px;
+}
+.orange-font
+{
+    color:#cd5423;
+}
+.course-info
+{
+    padding: 20px;
+    background: #fff;
+}
+.course-info ul
+{
+    padding-top:30px;
+    padding-bottom:30px;
+}
+.course-info ul li
+{
+    padding-bottom:10px;
+    color: #3c3c3c;
+}
+.course-info p
+{
+    font-size: 20px;
+    line-height: 35px;
+}
+.course-info img
+{
+    max-width: 100%;
+    border: 1px solid #72b2e2;
+    width:100%;
+} 
+@media only screen (max-width:767px)
+{
+	.landing-over-black h1
+	{
+		padding:15px;
+		font-size:20px;
+		text-align:center;
+	}
+	.details-mb
+	{
+		margin-bottom: 20px;
+    border-bottom: 1px solid #e6eaec;
+    padding: 10px;
+	}
+	.border-right
+	{
+		border-right:none;
+	}
+}
+.course-info-title
+{
+    font-size: 25px;
+    border-bottom: 3px solid #72b2e2;
+    padding-bottom: 20px;
+}
+.ladning-wrapper
+{
+	
+	height:400px;
+	position:relative;
+}
+.landing-content
+{
+  margin-top:25px;	
+}
+.ladning-details
+{
+	background-color:#fff;
+	border-radius:5px;
+	padding:20px;
+	width:100%;
+	bottom:-20px;
+}
+[lang|=en]
+{
+	font-family:tahoma;
+	
+}
+.landing-over-black h1
+{
+	color:#fff;
+	text-align:center;
+	width:100%;
+}
+.main-border
+{
+	    border: 1px solid #eaeaea;
+}
+.landing-content .text
+{
+	margin-top:15px;
+	font-size: 30px;
+    color: #72b2e2;
+}
+.ladning-details i
+{
+	color: #fff;
+    background-color: #cd5423;
+    padding-top: 17px;
+    border-radius: 50%;
+    height: 65px;
+    width: 65px;
+    text-align: center;
+}	
+.webdesign-background
+{
+	background: url(../landingImages/webdesign.jpg) no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+.landing-over-black
+{
+	position:absolute;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	top:0px;
+	background:rgba(10, 49, 90, 0.74);
+}
+.header
+{
+	left:0px;
+	right:0px;
+	top:85px !important;
+	border-bottom:1px solid #1c83ca;
+    background-color: rgba(3, 70, 115, 0.46) !important;
+	position:absolute;
+}
+.header ul a:hover
+{
+	    color: #ffd600  !important;
+		transition:.3s;
+}
