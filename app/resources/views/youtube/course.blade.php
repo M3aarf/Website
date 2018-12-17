@@ -18,7 +18,7 @@ $c_img = $course->image;
 <div class="col-lg-9">
 
 <h1 class="post_title">{{$c_title}}</h1>
-<a href="{{url('/course')}}/{{$c_id}}/{{$c_title}}"><h4>لمشاهدة الكورس مباشر بدون تحميل اضغط هنا <h4></a>
+<a href="{{url('/course')}}/{{$c_id}}/{{$course->title}}"><h4>لمشاهدة الكورس مباشر بدون تحميل اضغط هنا <h4></a>
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- sidebar_ads -->
 <ins class="adsbygoogle"

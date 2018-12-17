@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Storage;
 @extends('layouts.app')
 @extends('layouts.sidebar')
 <!-- Meta Tags !-->
+@if($status == '0')
+
+
+
+@endif
  @if($status == '1')  
 @section('pageTitle',  $post->title)
 @section('pageDesc',   str_limit(str_replace("&nbsp;", ' ', strip_tags($post->body)), $limit =150, $end = '...'))
@@ -111,7 +116,9 @@ function insertAd($content, $ad, $pos = 0){
 
 								   </div>
                            </div>
-                           <br><br>
+                           <br>
+						   <a href="https://www.facebook.com/m3aarfcom" class="main-btn-blue"> <h5> ليصلك منشورتنا وكل جديد على الفيس بوك اضغط هنا </h5></a>
+						   <br>
                  <ul  id="breadcrumb">
                   <li><a href="/"><span style="line-height:40px;" class="fa fa-home fa-2x"> </span></a></li>
                   <li><a href="/مقالات"><span class="title">المقالات</span> </a></li>
@@ -152,17 +159,7 @@ function insertAd($content, $ad, $pos = 0){
                         @include('inc/subsc')
 
                     </div>  
-               
-           </div>
-           
-
-
-  
-
-   
-    
-           
-@endsection
+                 
  @if($status == '1') 
 	 <?php $i = count($related); $r = rand(2,$i-1) ?>
  
@@ -190,3 +187,12 @@ function insertAd($content, $ad, $pos = 0){
     @endif	
 	 
   @endif
+           </div>
+           
+
+
+
+   
+    
+           
+@endsection

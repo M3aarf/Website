@@ -104,7 +104,7 @@ class adminCourse extends Controller
              ->addColumn('action',function($course)
                                                  {
                                                     
-                                                   return '<a  target="_blank" href="'. url('admin/course/').'/'.$course->id.'/lessons" class="btn btn-success"><i class="fa fa-plus"></i></a>'.'<a  target="_blank" href="  '. url('course/').'/'.$course->id.'/'.$course->slug.'" class="btn btn-primary"><i class="fa fa-eye"></i></a>'.'<a target="_blank" href="'. url('admin/courses/edit_course/').'/'.$course->id.'" class="btn btn-warning"><i class="fa fa-pencil"></i></a>'.' <button onclick=" delete_course('.$course->id.')" class="btn btn-danger"><i class="fa fa-trash"></i></button>';  
+                                                   return '<a  target="_blank" href="'. url('admin/course/').'/'.$course->id.'/lessons" class="btn btn-success"><i class="fa fa-plus"></i></a>'.'<a  target="_blank" href="  '. url('course/').'/'.$course->id.'" class="btn btn-primary"><i class="fa fa-eye"></i></a>'.'<a target="_blank" href="'. url('admin/courses/edit_course/').'/'.$course->id.'" class="btn btn-warning"><i class="fa fa-pencil"></i></a>'.' <button onclick=" delete_course('.$course->id.')" class="btn btn-danger"><i class="fa fa-trash"></i></button>';  
                                                  })
              ->addColumn('category',function($course)
                                                  {

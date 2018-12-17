@@ -27,13 +27,13 @@ if (isset($id) && $id) {
     }
 }
 ?>
-@extends('layouts.app')
-@extends('layouts.sidebar')
-<!-- Meta Tags !-->
-@section('pageTitle', 'تحميل '.$info['baseInfo']['name'])
-@section('pageDesc',  $info['baseInfo']['name'])
 
-@section('content')
+
+<!-- Meta Tags !-->
+<?php $__env->startSection('pageTitle', 'تحميل '.$info['baseInfo']['name']); ?>
+<?php $__env->startSection('pageDesc',  $info['baseInfo']['name']); ?>
+
+<?php $__env->startSection('content'); ?>
 
 <div class="col-md-9">
  <div class="panel-header">
@@ -48,7 +48,7 @@ if (isset($id) && $id) {
     </div>
 
     <div style="display: <?= (!$isError && $isRequest) ? 'block' : 'none' ?>">
-	<h4 class="text-secondary video-name">{{$course->title}} </h4>
+	<h4 class="text-secondary video-name"><?php echo e($course->title); ?> </h4>
         <h3 id="video-name"><?= $info['baseInfo']['name'] ?></h3 <br><br>
 		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- sidebar_ads -->
@@ -101,7 +101,7 @@ if (isset($id) && $id) {
                             </td>
                             <td><?= $dinfo['fileSizeHuman'] ?></td>
                             <td>
-                                <a href="<?= $dinfo['url'] ?>" target="_blank" class="btn btn-success btn-sm" onclick="c_down({{$course_id}})">
+                                <a href="<?= $dinfo['url'] ?>" target="_blank" class="btn btn-success btn-sm" onclick="c_down(<?php echo e($course_id); ?>)">
                                     <span class="glyphicon glyphicon-circle-arrow-down"></span>
                                     تحميل الفيديو بشكل مباشر
                                 </a>
@@ -116,13 +116,13 @@ if (isset($id) && $id) {
 				</div>
 				<a href="https://facebook.com/m3aarfcom" class="main-btn-blue" target="_blank"> إذا كان لديك اى مشكلة فى التحميل برجاء إرساله رساله لصفحتنا على الفيس بوك من هنا </a>
 				<div class="sm-space"></div>
-				<div class="main-box no-margin" style="border-right:3px solid #46a6e2;"> <a href="{{url('/youtube/course/')}}/{{$course->id}}/{{$course->slug}}">
+				<div class="main-box no-margin" style="border-right:3px solid #46a6e2;"> <a href="<?php echo e(url('/youtube/course/')); ?>/<?php echo e($course->id); ?>/<?php echo e($course->slug); ?>">
 				<h5>
 				لتحميل باقى الدروس اضغط هنا
 				</h5>
 				
 				</a>
-				<a href="{{url('/course/')}}/{{$course->id}}/{{$course->slug}}">
+				<a href="<?php echo e(url('/course/')); ?>/<?php echo e($course->id); ?>/<?php echo e($course->slug); ?>">
 				<h5 class="text-success">
 				  لمشاهدة الكورس مباشرة بدون تحميل اضغط هنا
 				</h5>
@@ -136,10 +136,11 @@ if (isset($id) && $id) {
 				  <li>سيظهر لك كلمة Download اضغط عليها ليبدء التحميل بشكل مباشر</li>
 				</ul>
 				</div>
-				<img style="max-width:100%;margin-top:20px;"src="{{asset('/landingImages')}}/downloadinfo.png">
+				<img style="max-width:100%;margin-top:20px;"src="<?php echo e(asset('/landingImages')); ?>/downloadinfo.png">
 				<div class="sm-space"></div>
 				<div class="main-box no-margin main-border">
-				<b>اسم الدورة التدريبية: </b> {{$course->title}}  <br>  <b>اسم الدرس المراد تحميله: </b> {{$info['baseInfo']['name']}} <br> <b>وصف الكورس: </b>{{$course->desc}}
+				<b>اسم الدورة التدريبية: </b> <?php echo e($course->title); ?>  <br>  <b>اسم الدرس المراد تحميله: </b> <?php echo e($info['baseInfo']['name']); ?> <br> <b>وصف الكورس: </b><?php echo e($course->desc); ?>
+
 				</div>
             </div>
         </div>
@@ -149,4 +150,7 @@ if (isset($id) && $id) {
 	
 	
 	</div>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.sidebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

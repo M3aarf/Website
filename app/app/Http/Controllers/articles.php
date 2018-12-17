@@ -134,8 +134,8 @@ class articles extends Controller
          $article = article::find($id);
          if(!$article)
          {
-            
-              return view('articles.article')->with('status','0');
+              return abort(404);
+              //return view('articles.article')->with('status','0');
              
          }
          
@@ -145,7 +145,7 @@ class articles extends Controller
          $related =  article::where([
     ['catID', '=', $catid],
     ['id', '!=', $id],
-])->get()->take(8);
+])->get()->take(9);
          $data = array
              (
                 'post' =>  $article ,

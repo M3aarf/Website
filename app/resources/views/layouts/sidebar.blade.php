@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Storage;
 
 @section('sidebar')
 <div class="col-lg-3 order-lg-3 order-md-3 order-sm-2  order-xs-2    ">
-    <div class="stickyy">
+    <div class="">
 <div class="">
              <div class="panel-header">
                          <h2>المقالات  <i class="fa fa-angle-down"></i> </h2>

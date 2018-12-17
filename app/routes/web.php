@@ -11,6 +11,7 @@
 |
 */
 Route::get('/craw', 'admin\Landing@start');
+Route::get('/noor', 'admin\nooor@get_links');
 Route::get('/مقالات','articles@index');
 Route::get('/articles/cat/{id}/{title}','articles@showcat');
 Route::get('/articles/cat/{id}','articles@showcat');
@@ -117,6 +118,7 @@ Route::get('/download.php', function () {
     return view('/youtube/download');
 });
 Route::get('/youtube/course/{id}/{title}','youtube@show'); 
+Route::get('/youtube/course/{id}','youtube@show'); 
 Route::get('/admin/downloads', function () {
     return view('/admin/downloads/report');
 });
@@ -130,3 +132,6 @@ Route::get('posts.html', function () {
     return redirect('/اقسام-المقالات');
 });
 Route::POST('course/download/unique', ['as'=>'update_course_downloads','uses'=>'youtube@update_downloads']);
+Route::get('m3aarf.com', function(){ 
+    return Redirect::to('https://www.m3aarf.com', 301); 
+});
