@@ -60,7 +60,7 @@
 {
 	    line-height: 30px;
 }
-.post_content .content a:after{ 
+.post_content .content a:after{
    content: '\f08e';
     font-family: FontAwesome;
     font-weight: normal;
@@ -71,7 +71,7 @@
     margin-right: 10px;
 	position:relative;
 	top:2px;
-} 
+}
 .pad-140
 {
 	padding-top:20px;
@@ -116,7 +116,7 @@
 }
 .courses-submenu ul li
 {
-	 
+
 	 -webkit-flex: 0 0 auto;
     flex: 0 0 auto;
     -webkit-flex-basis: 33.333333333%;
@@ -127,7 +127,7 @@
 [lang|=en]
 {
 	font-family:tahoma;
-	
+
 }
 *,
 .header ul,
@@ -262,14 +262,12 @@ ul {
     margin-bottom: 25px;
     display: inline-block
 }
-
-.header-course,
 .white {
     background: #fff
 }
 
 .header-course {
-    
+
     color: #292929
 }
 .header-course p {
@@ -502,9 +500,10 @@ body {
 }
 
 body {
-    background-color: #e6edf1;
+    background-color:#dde2e8;
     padding: 0!important;
     margin: 0!important
+		color:black;
 }
 
 .border-no {
@@ -639,15 +638,15 @@ ul.nav {
 }
 .all-courses-pages
 {
-	
+
 }
 .all-courses-pages .item-page-link
 {
-	
+
 }
 .all-courses-pages li
 {
-	
+
 }
 .popover-title {
     color: #00f;
@@ -1024,7 +1023,7 @@ a {
 	position: absolute;
     left: 50%;
     transform: translateX(-50%);
-	
+
 }
 
 .courses .course {
@@ -1093,6 +1092,7 @@ a {
 
 .course-search,
 .section {
+	  color:#282a2b;
     background-color: #fff
 }
 
@@ -1286,7 +1286,7 @@ section .more {
 }
 
 @media screen and (width:768px) {
- 
+
 	.course-header
 	{
 		color:#da5a25 !important;
@@ -1352,7 +1352,7 @@ section .more {
 	{
 		color:#da5a25 !important;
 	}
-	
+
 	.landing-over-black h1
 		{
 		color: #fff;
@@ -1361,23 +1361,23 @@ section .more {
 		position: absolute;
 		padding: 15px 10px;
 		bottom: 44px;
-		font-size: 30px !important;
+		font-size:25px !important;
 		line-height: 40px;
-		top:190px !important;
+		top:145px !important;
 		}
-	
-	
+
+
 	.pagBox .pagination
 	{
 		padding-right:0px;
 	}
 	.panel
 	{
-		margin-bottom:-5px !important; 
+		margin-bottom:-5px !important;
 	}
 	.inoledge-box
 	{
-	
+
     padding: 15px;
     font-size: 22px;
 	}
@@ -1519,7 +1519,7 @@ section .more {
 		position:static;
         top: 81px;
         z-index: 20;
-		
+
     }
     .main {
         padding-top:150px;
@@ -1578,8 +1578,8 @@ section .more {
 }
 
 .header-mob a {
-  
-   padding: 15px 0px;
+
+   padding:5px 0px;
     font-size: 14px;
     line-height: 26px;
     text-align: center;
@@ -1594,7 +1594,7 @@ ul {
 }
 
 .header-mob-show {
-  
+
     right: 0!important;
 }
 
@@ -1611,7 +1611,7 @@ ul {
 .breadcrumb-item a:hover
 {
 	color:#1e85c5 !important;
-	 
+
 }
 #breadcrumb .title {
     transform: rotateY(180deg);
@@ -2060,10 +2060,7 @@ ul {
     background: #888
 }
 
-.section playlist ul::-webkit-scrollbar-thumb:hover 
+.section playlist ul::-webkit-scrollbar-thumb:hover
 {
     background: #555
 }
-
-
-

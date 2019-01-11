@@ -3,3 +3,6 @@ RewriteCond %{HTTP_HOST} ^m3aarf.com$ [NC,OR]
 RewriteCond %{HTTP_HOST} ^www.m3aarf.com$
 RewriteCond %{REQUEST_URI} !html/
 RewriteRule (.*) /html/$1 [L]
+RewriteCond %{HTTP_HOST} ^m3aarf.com$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^www.m3aarf.com$
+RewriteRule ^(.*)$ https://www.m3aarf.com/$1 [R=301,L]

@@ -7,13 +7,13 @@
 <div class="container">
 <div class="courses-section row">
      <div class="col-lg-12">
-      
-           
 
-    
+
+
+
      </div>
-    
-  <?php if(count($cats) > 0): ?>  
+
+  <?php if(count($cats) > 0): ?>
    <?php $__currentLoopData = $cats; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
     <div class="item col-lg-4 col-md-4 col-sm-4 col-xs-6">
           <a href="/courses/cat/<?php echo e($cat->id); ?>/<?php echo e($cat->slug); ?>"><div class="icon">
@@ -23,9 +23,9 @@
            <h5>
                <?php echo e($cat->title); ?>
 
-               
+
              </h5>
-         </div> </a> 
+         </div> </a>
      </div>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 	 <div class="item col-lg-4 col-md-4 col-sm-4 col-xs-6">
@@ -35,13 +35,13 @@
          <div class="text">
            <h5>
                جميع الكورسات
-               
+
              </h5>
-         </div> </a> 
+         </div> </a>
      </div>
-	 
-  <?php endif; ?>    
- 
+
+  <?php endif; ?>
+
 
 </div>
  <?php echo file_get_contents('js/category_ads.js') ?>
@@ -51,4 +51,5 @@
         </div>
 </div>
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -4,11 +4,14 @@ namespace inoledge\Http\Controllers;
 use Illuminate\Http\Request;
 use  inoledge\courses;
 use  inoledge\course;
+$des =$cat->title."، تحميل و مشاهدة ".$cat->title."    ، اقوي كورسات لتعلم مجال ".$cat->title."،   تعليم الاطفال  ".$cat->title."،   اقوي مصدر لتعلم ".$cat->title;
+
 ?>
 
  <?php if($status == '1'): ?>
 <?php $__env->startSection('pageTitle',  $cat->title); ?>
-<?php $__env->startSection('pageDesc',  $cat->desc); ?>
+
+<?php $__env->startSection('pageDesc', $des); ?>
 <?php else: ?>
  <?php header('Location: https://www.m3aarf.com'); ?>
 <?php endif; ?>
@@ -16,20 +19,24 @@ use  inoledge\course;
 <?php $__env->startSection('content2'); ?>
 
  <?php if($status == '1'): ?>
-  
-     <div class="courses-bg header-course no-background" >
 
-       
+     <div class="courses-bg header-course " >
+
+
        <div class="container">
-       
+
            <div class="row">
-           
+
                <div class="col-lg-12">
-               
+
                    <div class="courses-container " id="courses-view">
-                 
+
                    <section class="courses ">
 				     <h1 class="post_title"><?php echo e($cat->title); ?></h1>
+             <div class="section main-border pad-15 marg-20">
+                    <?php echo e($des); ?>
+
+             </div>
 					    <div class="section main-border pad-15 marg-20">
 				   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- sidebar_ads -->
@@ -49,45 +56,45 @@ use  inoledge\course;
                                         <li class="breadcrumb-item"><a href="<?php echo e(url('/courses/cat')); ?>" style="color:#46a6e2">الاقسام</a></li>
                                       </ol>
                                     </nav>
-                   
-				
+
+
                      <div class="row">
-                         
+
                         <?php $__currentLoopData = $courses; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $course): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-						 
+
                          <div class="col-lg-3 col-md-6 ">
 						  <a href="<?php echo e(url('/')); ?>/course/<?php echo e($course->id); ?>/<?php echo e($course->slug); ?>">
                              <div class="course">
-                           
+
                                 <div class="media-course">
                                <img title="  <?php echo e($course->title); ?>" src="/storage/images/<?php echo e($course->image); ?>">
                                 <div class="overblue">
                                 <i class="fa fa-play fa-3x"></i>
-                                 </div> 
-                                  
+                                 </div>
+
                                </div>
-                              
+
                              <div class="content">
-                             
+
                                   <h3 title="  <?php echo e($course->title); ?>">
                                    <?php echo e($course->title); ?>
 
                                  </h3>
-                
-                             
+
+
                              </div>
-                            
+
                               <div class="view-course">
                                <span class="link" >مشاهدة الدورة <i class="fa fa-play"></i></span>
                               </div>
                          </div>
 						    </a>
                              </div>
-							
-                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
-                         
-                         
-                         
+
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+
+
                      </div>
 					  <?php echo file_get_contents('js/category_ads.js') ?>
 					 <div class="row">
@@ -96,18 +103,18 @@ use  inoledge\course;
 					   <?php echo e($courses->links('pagination.default')); ?>
 
 						</div>
-					   
+
 					   </div>
 					 </div>
-				
+
                     </section>
-                       
+
                    </div>
-               
+
                </div>
-           
+
            </div>
-       
+
        </div>
 
 
@@ -118,7 +125,7 @@ use  inoledge\course;
 						   <div class="row">
 						    <div class="col-lg-3 text-center">
 							   <img style='width:200px;' src="<?php echo e(asset('images/download-course.png')); ?>">
-							   
+
 							</div>
 							<div class="col-lg-9">
 							  <div class="sm-space"></div>
@@ -127,13 +134,13 @@ use  inoledge\course;
 							</div>
 						  </div>
 						   <div class="space"></div>
-						  
+
 						  </div>
 					 </div>
       <div class="header-course no-padding">
-     
-                           <div class="container">  
-                               <div class="col-lg-12"> 
+
+                           <div class="container">
+                               <div class="col-lg-12">
 							   <div class="sm-space"></div>
                                    <nav aria-label="breadcrumb">
                                       <ol class="breadcrumb">
@@ -141,12 +148,12 @@ use  inoledge\course;
                                         <li class="breadcrumb-item"><a href="<?php echo e(url('/courses/cat')); ?>" style="color:#46a6e2">الاقسام</a></li>
                                       </ol>
                                     </nav>
-                                   
-                             
+
+
                                <p><?php echo e($cat->desc); ?></p>
                                </div>
                                <div class="col-lg-7">
-                               
+
                                </div>
                            </div>
    </div>
@@ -174,8 +181,7 @@ use  inoledge\course;
 				   </div>
 
 </div>
-   
-<?php $__env->stopSection(); ?>
 
+<?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

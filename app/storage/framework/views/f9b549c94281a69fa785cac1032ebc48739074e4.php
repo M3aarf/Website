@@ -18,14 +18,14 @@ use Illuminate\Support\Facades\Storage;
                 </div>
             <div class="tab-content">
             <div id="home" class="  ">
-                    <?php $articles =article::latest('created_at')->get()->take(5);?>
+                    <?php $articles =article::orderBy('views','desc')->get()->take(10);?>
               <?php if(count($articles) > 0 ): ?>
                     <?php $__currentLoopData = $articles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $article): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <a href="/articles/<?php echo e($article->id); ?>/<?php echo e($article->slug); ?>"> <h3><?php echo e($article->title); ?></h3></a>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-              <?php endif; ?>    
+              <?php endif; ?>
                </div>
-            </div>    
+            </div>
 			<?php echo file_get_contents('js/sidebar_ads.js') ?>
 			<div style="padding:4px;"></div>
                <div class="panel-header">
@@ -33,12 +33,12 @@ use Illuminate\Support\Facades\Storage;
                 </div>
                 <div class="tab-content">
                <div id="menu1" class="  ">
-                       <?php $articles =article::where('catID',38)->orWhere('catID',37)->orWhere('catID',36)->get()->take(5) ?>
+                       <?php $articles =article::where('catID',38)->orWhere('catID',37)->orWhere('catID',36)->get()->take(10) ?>
               <?php if(count($articles) > 0 ): ?>
                     <?php $__currentLoopData = $articles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $article): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <a href="/articles/<?php echo e($article->id); ?>/<?php echo e($article->slug); ?>"> <h3><?php echo e($article->title); ?></h3></a>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-              <?php endif; ?> 
+              <?php endif; ?>
                 </div>
                 </div>
                 <?php echo file_get_contents('js/sidebar_ads.js') ?>
@@ -47,13 +47,13 @@ use Illuminate\Support\Facades\Storage;
                          <h2> الحياة العملية <i class="fa fa-angle-down"></i> </h2>
                 </div>
                  <div class="tab-content">
-                 	   <div id="menu3" class="  ">    
+                 	   <div id="menu3" class="  ">
                     <?php $articles =article::where('catID',34)->orWhere('catID',35)->get()->take(5) ?>
               <?php if(count($articles) > 0 ): ?>
                     <?php $__currentLoopData = $articles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $article): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <a href="/articles/<?php echo e($article->id); ?>/<?php echo e($article->slug); ?>"> <h3><?php echo e($article->title); ?></h3></a>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-              <?php endif; ?> 
+              <?php endif; ?>
                 </div>
                  </div>
                 <?php echo file_get_contents('js/sidebar_ads.js') ?>
@@ -62,27 +62,27 @@ use Illuminate\Support\Facades\Storage;
                          <h2> المسارات التعليمية <i class="fa fa-angle-down"></i> </h2>
                 </div>
                  <div class="tab-content">
-                 	   <div id="menu3" class="">    
+                 	   <div id="menu3" class="">
                     <?php $articles =tracks::all()->take(5); ?>
               <?php if(count($articles) > 0 ): ?>
                     <?php $__currentLoopData = $articles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $article): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <a href="/tracks/<?php echo e($article->id); ?>/<?php echo e($article->slug); ?>"> <h3><?php echo e($article->title); ?></h3></a>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-              <?php endif; ?> 
+              <?php endif; ?>
                 </div>
                  </div>
-      
+
         <div class="panel">
-		
+
                 <div class="panel-header">
                          <h2>دورات تدريبية مجاناً</h2>
                 </div>
-          
+
                 <div class="panel-content">
-                    <?php $__currentLoopData = courses::all()->take(10); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                      
+                    <?php $__currentLoopData = courses::all()->take(20); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
                     <a  data-placement="top" title="<?php echo e($cat->title); ?>" data-toggle="popover" data-trigger="hover" data-content="<?php echo e(count(course::where('cat_id',$cat->id)->get())); ?>"  href="<?php echo e(url('courses/cat/')); ?>/<?php echo e($cat->id); ?>/<?php echo e($cat->slug); ?>"><span class="tag"><?php echo e($cat->title); ?></span></a>
-                    
+
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
         </div>

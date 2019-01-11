@@ -4,8 +4,8 @@
 
 $c_title = 'تحميل '.$course->title;
 $c_id = $course->id;
-$c_desc = 'تحميل  تنزيل '.$course->desc;
-$c_img = $course->image; 
+$c_desc =$c_title." ، دروس ".$c_title." ، تحميل برابط مباشر و مشاهدة ".$c_title." ، تعليم الاطفال ".$c_title." ، البداية لتعلم ".$c_title." ، ".$c_title." ، تحميل كورس ".$c_title;
+$c_img = $course->image;
 
 ?>
 <?php $__env->startSection('pageTitle',  $c_title); ?>
@@ -18,6 +18,10 @@ $c_img = $course->image;
 <div class="col-lg-9">
 
 <h1 class="post_title"><?php echo e($c_title); ?></h1>
+<div class="section main-border pad-15 marg-20">
+<?php echo e($c_desc); ?>
+
+</div><br>
 <a href="<?php echo e(url('/course')); ?>/<?php echo e($c_id); ?>/<?php echo e($course->title); ?>"><h4>لمشاهدة الكورس مباشر بدون تحميل اضغط هنا <h4></a>
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- sidebar_ads -->
@@ -45,7 +49,7 @@ $c_img = $course->image;
 	</h3>
 	</div>
 	<div class="col-sm-4 text-center">
-	
+
 	<a class="main-btn-blue no-margin" target="_blank" href="<?php echo e(url('/')); ?>/youtube/<?php echo e($c_id); ?>/lesson/<?php echo e($lesson->link); ?>">تحميل الدرس</a>
 
 	</div>
@@ -58,7 +62,6 @@ $c_img = $course->image;
 </div>
 
 <?php $__env->stopSection(); ?>
-
 
 <?php echo $__env->make('layouts.sidebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -23,22 +23,22 @@
     <meta content="IE=EmulateIE7" http-equiv="X-UA-Compatible" />
     <meta property="og:url" content="https://<?php echo $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] ?>" />
     <meta property="og:title" content="@if(View::hasSection('pageTitle'))@yield('pageTitle')@elseمنصة معارف التعليمية - نشر العلم متعة@endif" />
-    <meta property="og:description" content="@if(View::hasSection('pageDesc'))@yield('pageDesc')@elseمنصة معارف التعليمية متخصصه فى المقالات العملية و الدورات التدريبية و الكورسات المجانية وكل ما يخص السفر و التاشيرات@endif " />
+    <meta property="og:description" content="@if(View::hasSection('pageDesc')) @yield('pageDesc') @elseمنصة معارف التعليمية متخصصه فى المقالات العملية و الدورات التدريبية و الكورسات المجانية وكل ما يخص السفر و التاشيرات@endif " />
     <meta property="og:image" content="@if(View::hasSection('image')){{url('/')}}/storage/images/@yield('image')
     @else {{asset('images/m3aarf.png')}} @endif" />
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="csrf-token" content="{{csrf_token()}}"> 
+    <meta name="csrf-token" content="{{csrf_token()}}">
     <title>@if(View::hasSection('pageTitle'))@yield('pageTitle')@elseمنصة معارف التعليمية - نشر العلم متعة@endif</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}?v=208">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}?v=212">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Tajawal:400,500,700,800,900" rel="stylesheet">
     <link rel="shortcut icon" href="{{asset('images/letter-v.png')}}">
 	<link href="https://<?php echo $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] ?>" rel="canonical"/>
-	@if(View::hasSection('style')) 
-		<link rel="stylesheet" href="{{asset('css/')}}/@yield('style')?v=52">
+	@if(View::hasSection('style'))
+		<link rel="stylesheet" href="{{asset('css/')}}/@yield('style')?v=55">
 	@endif
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122653473-1"></script>
@@ -56,9 +56,9 @@
       xfbml      : true,
       version    : 'v3.1'
     });
-  
+
     FB.AppEvents.logPageView();
-  
+
   };
 
   (function(d, s, id){
@@ -113,17 +113,17 @@
             </div>
         </div>
         <div class="header">
-            <ul> 
+            <ul>
                 <a href="{{url('/اقسام-المقالات')}}">
                     <li>مقالات</li>
                 </a>
                 <a href="{{url('/كورسات-مجانا')}}" id="course-btn">
                     <li>دورات تدريبية
-					
+
 					</li>
-					
-                </a>	
-<!--				
+
+                </a>
+<!--
                 <a href="{{url('/المسارات-التعليمية')}}">
                     <li>المسارات التعليمية</li>
                 </a> !-->
@@ -135,18 +135,18 @@
                 </a>
             </ul>
         </div>
-		
-				
-					
+
+
+
         <div id="mob-menu" class="header-mob header-mob-hide">
-         <div class="container-fluid">  
+         <div class="container-fluid">
 			<div class="row">
 			    <div class="col-3">
 					<a href="{{url('/مقالات')}}">
 						عرض
 						<br>
 						المقالات
-						
+
 					</a>
 				</div>
 				<div class="col-3">
@@ -164,7 +164,7 @@
                    الحياة
 					<br>
 					العملية
-					
+
                 </a>
 				</div>
 			</div>
@@ -204,20 +204,20 @@
                 data: info,
                 success: function()
                 {
-                $('.page-header').append("<div class='alert alert-success text-center' dir='rtl'>تم المسح بنجاح</div>");    
-                $('#tip'+id).remove();   
+                $('.page-header').append("<div class='alert alert-success text-center' dir='rtl'>تم المسح بنجاح</div>");
+                $('#tip'+id).remove();
                 setTimeout(function() {
                     $('.alert').fadeOut('slow');
-                }, 1000);    
-                    
-                } 
+                }, 1000);
+
+                }
             });
 	}
 	</script>
     <script>
         $(".course-search select").change(function() {
             var e = $(this).val(),
-                s = $(this).find("option:selected").text().split(" ").join("-"); 
+                s = $(this).find("option:selected").text().split(" ").join("-");
             console.log(s), $(".course-search a").attr("href", "/courses/cat/" + e + "/" + s)
         })
     </script>

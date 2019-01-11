@@ -10,13 +10,13 @@
 <div class="container">
 <div class="courses-section row">
      <div class="col-lg-12">
-      
-           
 
-    
+
+
+
      </div>
-    
-  @if(count($cats) > 0)  
+
+  @if(count($cats) > 0)
    @foreach($cats as $cat)
     <div class="item col-lg-4 col-md-4 col-sm-4 col-xs-6">
           <a href="/courses/cat/{{$cat->id}}/{{$cat->slug}}"><div class="icon">
@@ -25,9 +25,9 @@
          <div class="text">
            <h5>
                {{$cat->title}}
-               
+
              </h5>
-         </div> </a> 
+         </div> </a>
      </div>
     @endforeach
 	 <div class="item col-lg-4 col-md-4 col-sm-4 col-xs-6">
@@ -37,13 +37,13 @@
          <div class="text">
            <h5>
                جميع الكورسات
-               
+
              </h5>
-         </div> </a> 
+         </div> </a>
      </div>
-	 
-  @endif    
- 
+
+  @endif
+
 
 </div>
  <?php echo file_get_contents('js/category_ads.js') ?>

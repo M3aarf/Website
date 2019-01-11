@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Storage;
 
 
 @endif
- @if($status == '1')  
+ @if($status == '1')
 @section('pageTitle',  $post->title)
 @section('pageDesc',   str_limit(str_replace("&nbsp;", ' ', strip_tags($post->body)), $limit =150, $end = '...'))
 @section('keywords',  $post->keywords)
@@ -21,14 +21,14 @@ use Illuminate\Support\Facades\Storage;
 @else
  <?php header('Location: https://www.m3aarf.com'); ?>
 @endif
-<?php 
+<?php
 function insertAd($content, $ad, $pos = 0){
   // $pos = 0 means randomly position in the content
   $count = substr_count($content, "<p>");
   $pos = rand(0,$count-1);
   if($count == 0  or $count <= $pos){
 	  return $content;
-    
+
   }
   else{
     if($pos == 0){
@@ -45,16 +45,16 @@ function insertAd($content, $ad, $pos = 0){
  ?>
 @section('content')
 
-               
+
            <div class="col-lg-9  ">
-                       @if($status == '1')  
+                       @if($status == '1')
 						                          <h1 class="post_title" title="{{$post->title}}">
-                           
+
                                {{$post->title}}
 
-                     
+
                      </h1>
-                   
+
 				   <div class="section main-border pad-15">
 				   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- sidebar_ads -->
@@ -75,7 +75,7 @@ function insertAd($content, $ad, $pos = 0){
 							<li class="breadcrumb-item color"><a class="color" href="{{url('')}}/مقالات">الاقسام</a></li>
 							<li class="breadcrumb-item color"><a class="color" href="{{url('/articles/cat/'.$cat->id)}}/{{$cat->slug}}">{{$cat->title}}</a></li>
 							</ol>
-							</nav> 
+							</nav>
                     </div>
                <div style="margin-top:10px;" >
                     @if(!Auth::guest())
@@ -87,7 +87,7 @@ function insertAd($content, $ad, $pos = 0){
                     @endif
                    </div>
                  <div class="post_container">
-                      
+
 
 
                        <img title="{{$post->title}}" class="post_main_image" src="/storage/images/{{$post->image}}">
@@ -98,15 +98,15 @@ function insertAd($content, $ad, $pos = 0){
                                        <span class="highlight">مواضيع ذات صلة</span>
                                        <ul>
                                            @foreach($related as $art)
-                                         <a href="{{url('/articles')}}/{{$art->id}}/{{$art->title}}"><li><div class="text">
+                                         <a href="{{url('/articles')}}/{{$art->id}}/{{$art->slug}}"><li><div class="text">
                                                 {{$art->title}}
-                                            </div> 
+                                            </div>
                                          </li></a>
-                                    
+
                                            @endforeach
                                        </ul>
                                    </div>
-                                    
+
                                </div>
                                <div class="col-lg-9 ">
                                    <div class="content">
@@ -122,77 +122,77 @@ function insertAd($content, $ad, $pos = 0){
                  <ul  id="breadcrumb">
                   <li><a href="/"><span style="line-height:40px;" class="fa fa-home fa-2x"> </span></a></li>
                   <li><a href="/مقالات"><span class="title">المقالات</span> </a></li>
-                  <li><a href="{{url('/articles/cat/'.$cat->id)}}"><span class="title">{{$cat->title}}</span> </a></li>
-                
+                  <li><a href="{{url('/articles/cat/'.$cat->id)}}/{{$cat->slug}}"><span class="title">{{$cat->title}}</span> </a></li>
+
                 </ul>
                      </div>
-                  
+
                  </div>
 
                   @else
-   
-      
+
+
                  @endif
 				 <related>
 				 <h2 class="title-border">اقرأ ايضا</h2>
 				    <div class="row">
-                          @foreach($related as $post)  
+                          @foreach($related as $post)
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                      <a href="{{url('/articles/'.$post->id.'/'.$post->slug)}}"><div class="ar_category_post " >
                                          <div class="image_articles">
                                            <img alt="   {{$post->title}}" title="" src="/storage/images/{{$post->image1}}" class="img-responsive">
-                                        </div>  
+                                        </div>
                                          <div class="cat_post">
 
                                        <h4 title="  {{$post->title}}">
                                           {{$post->title}} </h4>
-                                        
-                                         </div>    
+
+                                         </div>
                                 </div></a>
-                            </div>    
-                          @endforeach  
+                            </div>
+                          @endforeach
                      </div>
 					 </related>
-					 
+
                                    <div class="subsc">
 
                         @include('inc/subsc')
 
-                    </div>  
-                 
- @if($status == '1') 
+                    </div>
+
+ @if($status == '1')
 	 <?php $i = count($related); $r = rand(2,$i-1) ?>
- 
-	
+
+
 	 @if($i > 2)
-		
-   	    <a href="{{url('/articles')}}/{{($related[$r])->id}}/{{($related[$r])->title}}">
-	  
-			<div class="suggest_article"> 
-			
-				
-			 {{($related[$r])->title}}  
-			 
+
+   	    <a href="{{url('/articles')}}/{{($related[$r])->id}}/{{($related[$r])->slug}}">
+
+			<div class="suggest_article">
+
+
+			 {{($related[$r])->title}}
+
 			  </div>
 		  </a>
-	@else 
-		 <a href="{{url('/articles')}}/{{($related[0])->id}}/{{($related[0])->title}}">
-	  
-			<div class="suggest_article"> 
-			
-			 {{($related[0])->title}}  
-			 
+	@else
+		 <a href="{{url('/articles')}}/{{($related[0])->id}}/{{($related[0])->slug}}">
+
+			<div class="suggest_article">
+
+			 {{($related[0])->title}}
+
 			  </div>
 		  </a>
-    @endif	
-	 
+    @endif
+
   @endif
            </div>
-           
 
 
 
-   
-    
-           
+
+
+
+
 @endsection
